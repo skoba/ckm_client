@@ -13,13 +13,12 @@ Then /^CKM repository is assigned$/ do
 end
 
 Given /^No repository assigned$/ do
-  pending # express the regexp above with the code you wish you had
 end
 
 When /^I construct CKM client instance$/ do
-  pending # express the regexp above with the code you wish you had
+  @ckmc = OpenEHR::CKMClient.new
 end
 
 Then /^The openEHR official CKM is assigned as default$/ do
-  pending # express the regexp above with the code you wish you had
+  @ckmc.repository.should == 'http://openehr.org/knowledge/services/ArchetypeFinderBean?wsdl'
 end
