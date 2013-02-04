@@ -15,3 +15,8 @@ Feature: CKM Client access CKM repository
     Given No repository assigned
     When I construct CKM client instance
     Then The openEHR official CKM is assigned as default
+
+  Scenario: fetch adl file by archetype ID
+    Given archetype ID
+    When I fetch adl file by archetype ID
+    Then ID matched archetype should be retrieved

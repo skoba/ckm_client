@@ -1,5 +1,3 @@
-ARCHETYPE_ID = 'openEHR-EHR-OBSERVATION.blood_pressure.v1'
-
 Given /^a CKM repository$/ do
   @repository = 'http://www.openehr.org/'
 end
@@ -22,3 +20,17 @@ end
 Then /^The openEHR official CKM is assigned as default$/ do
   @ckmc.repository.should == 'http://openehr.org/knowledge/services/ArchetypeFinderBean?wsdl'
 end
+
+Given /^archetype ID$/ do
+  @archetype_id = 'openEHR-EHR-OBSERVATION.blood_pressure.v1'
+end
+
+When /^I fetch adl file by archetype ID$/ do
+  ckmc = OpenEHR::CKMclient.new
+  @adl_file = ckmc.fetch(@archetype_id)
+end
+
+Then /^ID matched archetype should be retrieved$/ do
+  @adl_file.should include @ardchetype_id
+end
+
