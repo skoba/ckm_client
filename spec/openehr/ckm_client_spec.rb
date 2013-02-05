@@ -23,5 +23,13 @@ module OpenEHR
         end
       end
     end
+
+    describe "#fetch" do
+      let(:ckmc) { OpenEHR::CKMClient.new }
+
+      it 'fetch archetype by id' do
+        ckmc.fetch(ARCHETYPE_ID).should match /#{ARCHETYPE_ID}/
+      end
+    end
   end
 end

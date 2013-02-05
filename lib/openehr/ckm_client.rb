@@ -9,8 +9,17 @@ module OpenEHR
     end
 
     def fetch(id)
-      ckmws = SOAP::WSDLDriverFactory.new(@repository).create_rpc_driver
-      ckmws.getArchetypeInADL(archetypeId: id).m_return
+      SOAPDriver.new(@repository).get_adl_by_id(id)
+    end
+  end
+
+  class SOAPDriver
+    def initialize(repository)
+      @driver = SOAP::WSDLDriverFactory.new(repository).create_rpc_driver
+    end
+
+    def get_adl_by_id(id)
+      @driver.getArchetypeInADL(archetypeId: id).m_return
     end
   end
 end
