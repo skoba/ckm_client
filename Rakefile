@@ -10,8 +10,8 @@ Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "ckm_client"
   gem.homepage = "http://github.com/skoba/ckm_client"
-  gem.license = "MIT"
-  gem.summary = %Q{A client module for openEHR clinical knowlege manager}
+  gem.license = "Apache 2.0"
+  gem.summary = %Q{The openEHR CKM command line client}
   gem.description = %Q{A client module for openEHR clinical knowlege manager}
   gem.email = "skoba@moss.gr.jp"
   gem.authors = ["Shinji KOBAYASHI"]
