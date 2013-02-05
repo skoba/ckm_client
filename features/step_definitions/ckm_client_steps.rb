@@ -1,3 +1,4 @@
+OPENEHR_CKM = 'http://openehr.org/knowledge/services/ArchetypeFinderBean?wsdl'
 Given /^a CKM repository$/ do
   @repository = 'http://www.openehr.org/'
 end
@@ -18,7 +19,7 @@ When /^I construct CKM client instance$/ do
 end
 
 Then /^The openEHR official CKM is assigned as default$/ do
-  @ckmc.repository.should == 'http://openehr.org/knowledge/services/ArchetypeFinderBean?wsdl'
+  @ckmc.repository.should == OPENEHR_CKM
 end
 
 Given /^archetype ID$/ do
@@ -26,11 +27,11 @@ Given /^archetype ID$/ do
 end
 
 When /^I fetch adl file by archetype ID$/ do
-  ckmc = OpenEHR::CKMclient.new
+  ckmc = OpenEHR::CKMClient.new
   @adl_file = ckmc.fetch(@archetype_id)
 end
 
 Then /^ID matched archetype should be retrieved$/ do
-  @adl_file.should include @ardchetype_id
+  @adl_file.should match /#{@ardchetype_id}/
 end
 

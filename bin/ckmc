@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+$:.unshift(File.expand_path('../../lib', __FILE__))
+require 'openehr/ckm_client'
+
+if ARGV.shift == 'help'
+   puts <<USAGE
+Usage:
+  ckmc <command> [<args>]
+
+Commands supported:
+  fetch    Retrieve archetype by archetype_id
+  search   query archetype by keyword
+USAGE
+end

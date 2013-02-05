@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 REPOSITORY = 'http://www.openehr.org/'
+OPENEHR_REPOSITORY = 'http://openehr.org/knowledge/services/ArchetypeFinderBean?wsdl'
 ARCHETYPE_ID = 'openEHR-EHR-OBSERVATION.blood_pressure.v1'
 
 module OpenEHR
@@ -11,6 +12,14 @@ module OpenEHR
         
         it 'respoistory is REPOSITORY' do
           ckmc.repository.should == REPOSITORY
+        end
+      end
+
+      context 'Default repository is openEHR CKM repository' do
+        let(:ckmc) { OpenEHR::CKMClient.new }
+
+        it 'default repository is openEHR ckm repository' do
+          ckmc.repository.should == OPENEHR_REPOSITORY
         end
       end
     end
