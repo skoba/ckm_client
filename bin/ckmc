@@ -2,7 +2,8 @@
 $:.unshift(File.expand_path('../../lib', __FILE__))
 require 'openehr/ckm_client'
 
-if ARGV.shift == 'help'
+case ARGV.shift
+when 'help'
    puts <<USAGE
 Usage:
   ckmc <command> [<args>]
@@ -10,5 +11,10 @@ Usage:
 Commands supported:
   fetch    Retrieve archetype by archetype_id
   search   query archetype by keyword
+  help     show this help
 USAGE
+when 'fetch'
+  puts OpenEHR::CKMClient.new.fetch(ARGV[0])
+when 'search'
+  puts 'Not yet implemented'
 end
