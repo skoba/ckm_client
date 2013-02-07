@@ -35,3 +35,16 @@ Then /^ID matched archetype should be retrieved$/ do
   @adl_file.should match /#{@ardchetype_id}/
 end
 
+Given /^partial archetype ID$/ do
+  @partial_id = 'blood'
+end
+
+When /^I query archetype by partial ID$/ do
+  @archetypes = OpenEHR::CKMClient.new.search(@partial_id)
+end
+
+Then /^Partially matched archetype list should be retrieved$/ do
+  @archetypes.each do |archetype|
+    archetype.should match /blood/
+  end
+end
