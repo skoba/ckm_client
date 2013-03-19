@@ -8,6 +8,7 @@
 *.gem
 *.rbc
 .bundle
+*.lock
 .config
 coverage
 InstalledFiles
