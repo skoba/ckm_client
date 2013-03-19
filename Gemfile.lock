@@ -1,3 +1,10 @@
+PATH
+  remote: .
+  specs:
+    ckm_client (0.0.2)
+      soap4r-ruby1.9
+      thor
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -14,7 +21,6 @@ GEM
     ffi (1.4.0)
     gherkin (2.11.6)
       json (>= 1.7.6)
-    git (1.2.5)
     guard (1.6.2)
       listen (>= 0.6.0)
       lumberjack (>= 1.0.2)
@@ -31,11 +37,6 @@ GEM
       childprocess (>= 0.2.3)
       guard (>= 1.1)
       spork (>= 0.8.4)
-    jeweler (1.8.4)
-      bundler (~> 1.0)
-      git (>= 1.2.5)
-      rake
-      rdoc
     json (1.7.7)
     libnotify (0.8.0)
       ffi (>= 1.0.11)
@@ -50,8 +51,6 @@ GEM
     rake (10.0.3)
     rb-kqueue (0.2.0)
       ffi (>= 0.5.0)
-    rdoc (4.0.0)
-      json (~> 1.4)
     rspec (2.13.0)
       rspec-core (~> 2.13.0)
       rspec-expectations (~> 2.13.0)
@@ -70,16 +69,15 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  ckm_client!
   cucumber
   guard
   guard-cucumber
   guard-rspec (~> 2.4.0)
   guard-spork
-  jeweler
   libnotify
   listen (= 0.6)
+  rake
   rb-kqueue
   rspec
-  soap4r-ruby1.9
   spork (~> 1.0.0.rc)
-  thor
