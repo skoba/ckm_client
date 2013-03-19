@@ -1,3 +1,3 @@
 module OpenEHR
-  autoload :CKMClient, 'openehr/ckm_client'
+  require 'openehr/ckm_client'
 end

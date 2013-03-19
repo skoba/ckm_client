@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 REPOSITORY = 'http://www.openehr.org/'
-OPENEHR_REPOSITORY = 'http://openehr.org/knowledge/services/ArchetypeFinderBean?wsdl'
+OPENEHR_REPOSITORY = 'http://openehr.org/ckm/services/ArchetypeFinderBean?wsdl'
 ARCHETYPE_ID = 'openEHR-EHR-OBSERVATION.blood_pressure.v1'
 
 module OpenEHR
