@@ -12,7 +12,7 @@ group :test, :development do
   gem 'spork', '~> 1.0.0.rc'
   gem 'guard-rspec', '~> 2.4.0'
   gem 'guard-cucumber'
-  gem 'listen' #, '0.6'
+  gem 'listen', '0.6'
   gem 'rb-kqueue'
   gem 'libnotify'
 end
