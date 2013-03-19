@@ -1,4 +1,5 @@
 CKM_REPOSITORY = 'http://openehr.org/ckm/services/ArchetypeFinderBean?wsdl'
+require 'soap/wsdlDriver'
 
 module OpenEHR
   module CKMClient
