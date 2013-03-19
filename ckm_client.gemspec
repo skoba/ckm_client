@@ -11,7 +11,7 @@ Gem::Specification.new do |gem|
 
   gem.summary = 'CKM client and command line tool'
   gem.description = 'CKM client via web services and command line tool'
-  gem.homepage = 'openehr.jp'
+  gem.homepage = 'http://openehr.jp'
   gem.licenses = 'Apache 2.0'
   gem.executables = ["ckmc"]
   gem.extra_rdoc_files = [
