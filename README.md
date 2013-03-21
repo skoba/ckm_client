@@ -5,7 +5,14 @@ A client module for the openEHR clincal knowledge manager
 
 Usage
 ----------
-ckmc <command> <args>
+Usage:
+  ckmc <command> [<args>]
+
+Commands supported:
+  get    Retrieve archetype by archetype_id
+  search   query archetype by keyword
+  help     show this help
+
 
 Commands supported:
   fetch    Retrieve archetype by archetype_id
