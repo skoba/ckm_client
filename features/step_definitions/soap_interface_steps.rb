@@ -29,11 +29,11 @@ end
 
 When /^I fetch adl file by archetype ID$/ do
   si = OpenEHR::CKMClient::SOAPInterface.new
-  @adl_file = si.fetch(@archetype_id)
+  @adl = si.fetch(@archetype_id)
 end
 
 Then /^ID matched archetype should be retrieved$/ do
-  @adl_file.should match /#{@ardchetype_id}/
+  @adl.should match /#{@ardchetype_id}/
 end
 
 Given /^partial archetype ID$/ do

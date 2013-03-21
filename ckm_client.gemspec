@@ -30,11 +30,12 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency('cucumber')
   gem.add_development_dependency('guard')
   gem.add_development_dependency('guard-spork')
-  gem.add_development_dependency('spork', '~> 1.0.0.rc')
-  gem.add_development_dependency('guard-rspec', '~> 2.4.0')
+  gem.add_development_dependency('spork', '~> 1.0rc')
+  gem.add_development_dependency('guard-rspec')
   gem.add_development_dependency('guard-cucumber')
   gem.add_development_dependency('listen', '0.6')
   gem.add_development_dependency('rb-kqueue')
+#  gem.add_development_dependency('ammeter', '0.2.8')
   gem.add_development_dependency('libnotify')
 end
 

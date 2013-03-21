@@ -11,11 +11,16 @@ module OpenEHR
       end
       
       def fetch(id)
-        SOAPDriver.new(@repository).get_adl_by_id(id)
+        soap_driver(@repository).get_adl_by_id(id)
       end
       
       def search(partial_id)
-        SOAPDriver.new(@repository).get_archetypes_by_partial_id(partial_id)
+        soap_driver(@repository).get_archetypes_by_partial_id(partial_id)
+      end
+
+      private
+      def soap_driver(repository)
+        SOAPDriver.new(repository)
       end
     end
     
@@ -28,7 +33,7 @@ module OpenEHR
         @driver.getArchetypeInADL(archetypeId: id).m_return
       end
       
-      def get_archetypes_by_partial_id(id)
+      def get_archetypes_by_partial_id(id) 
         @driver.getArchetypeIdsFromPartialId(archetypeIdPart: id).m_return
       end
     end

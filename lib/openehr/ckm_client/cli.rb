@@ -4,16 +4,19 @@ require 'openehr/ckm_client/soap_interface'
 module OpenEHR
   module CKMClient
     class CLI < Thor
-      desc 'fetch', 'Retrieve archetype by archetype_id'
-      def get(archtype_id)
-        puts OpenEHR::CKMClient::SOAPInterface.new.fetch(archtype_id)
+      include Thor::Actions
+
+      desc 'get', 'Retrieve archetype by archetype_id'
+      def get(archetype_id)
+        create_file archetype_id+'.adl', soap_interface.fetch(archetype_id)
       end
 
+      desc 'fetch', 'alias of get'
       alias fetch get
       
       desc 'search', 'Query archetype by partial id'
       def search(part_id)
-        puts OpenEHR::CKMClient::SOAPInterface.new.search(part_id)
+        puts soap_interface.new.search(part_id)
       end
       
       desc 'help', 'Show  this help'
@@ -27,6 +30,12 @@ Commands supported:
   search   query archetype by keyword
   help     show this help
 USAGE
+      end
+
+      private
+
+      def soap_interface
+        OpenEHR::CKMClient::SOAPInterface.new
       end
     end
   end
