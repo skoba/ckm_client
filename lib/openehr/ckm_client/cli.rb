@@ -16,7 +16,7 @@ module OpenEHR
       
       desc 'search', 'Query archetype by partial id'
       def search(part_id)
-        puts soap_interface.new.search(part_id)
+        puts soap_interface.search(part_id)
       end
       
       desc 'help', 'Show  this help'
