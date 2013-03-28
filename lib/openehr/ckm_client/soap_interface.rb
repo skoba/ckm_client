@@ -1,5 +1,5 @@
 CKM_REPOSITORY = 'http://openehr.org/ckm/services/ArchetypeFinderBean?wsdl'
-require 'soap/wsdlDriver'
+require 'savon'
 
 module OpenEHR
   module CKMClient
@@ -26,15 +26,17 @@ module OpenEHR
     
     class SOAPDriver
       def initialize(repository)
-        @driver = SOAP::WSDLDriverFactory.new(repository).create_rpc_driver
+        @driver = Savon.client(wsdl: repository)
       end
       
       def get_adl_by_id(id)
-        @driver.getArchetypeInADL(archetypeId: id).m_return
+        response = @driver.call :get_archetype_in_adl, message: {archetypeId: id}
+        response.body[:get_archetype_in_adl_response][:return]
       end
       
       def get_archetypes_by_partial_id(id) 
-        @driver.getArchetypeIdsFromPartialId(archetypeIdPart: id).m_return
+        response = @driver.call :get_archetype_ids_from_partial_id, message: {archetypeIdPart: id}
+        response.body[:get_archetype_ids_from_partial_id_response][:return]
       end
     end
   end

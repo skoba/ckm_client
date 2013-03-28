@@ -1,5 +1,3 @@
-require 'soap/wsdlDriver'
-
 module OpenEHR
   module CKMClient
     require 'openehr/ckm_client/cli'

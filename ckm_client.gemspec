@@ -23,7 +23,8 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
 
   gem.add_dependency('thor')
-  gem.add_dependency('soap4r-ruby1.9')
+#  gem.add_dependency('soap4r-ruby1.9')
+  gem.add_dependency('savon')
 
   gem.add_development_dependency('rake')
   gem.add_development_dependency('rspec')
