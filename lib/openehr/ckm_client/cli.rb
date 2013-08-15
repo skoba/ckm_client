@@ -5,6 +5,7 @@ module OpenEHR
   module CKMClient
     class CLI < Thor
       include Thor::Actions
+      class_option :verbose, type: :boolean, alias: '-v'
 
       desc 'get', 'Retrieve archetype by archetype_id'
       def get(archetype_id)
@@ -35,7 +36,7 @@ USAGE
       private
 
       def soap_interface
-        OpenEHR::CKMClient::SOAPInterface.new
+        OpenEHR::CKMClient::SOAPInterface.new(options)
       end
     end
   end

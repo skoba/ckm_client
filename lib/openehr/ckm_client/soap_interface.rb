@@ -6,8 +6,9 @@ module OpenEHR
     class SOAPInterface
       attr_reader :repository
 
-      def initialize(repository=CKM_REPOSITORY)
-        @repository = repository
+      def initialize(params)
+        @repository = params[:repository] || CKM_REPOSITORY
+        @log_level = params[:verbose] ? :debug : :fatal
       end
       
       def fetch(id)
@@ -20,13 +21,13 @@ module OpenEHR
 
       private
       def soap_driver(repository)
-        SOAPDriver.new(repository)
+        SOAPDriver.new(repository, @log_level)
       end
     end
     
     class SOAPDriver
-      def initialize(repository)
-        @driver = Savon.client(wsdl: repository)
+      def initialize(repository, log_level)
+        @driver = Savon.client(wsdl: repository, log_level: log_level)
       end
       
       def get_adl_by_id(id)

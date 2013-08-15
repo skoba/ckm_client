@@ -23,7 +23,6 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
 
   gem.add_dependency('thor')
-#  gem.add_dependency('soap4r-ruby1.9')
   gem.add_dependency('savon')
 
   gem.add_development_dependency('rake')
@@ -36,7 +35,6 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency('guard-cucumber')
   gem.add_development_dependency('listen', '0.6')
   gem.add_development_dependency('rb-kqueue')
-#  gem.add_development_dependency('ammeter', '0.2.8')
   gem.add_development_dependency('libnotify')
 end
 
