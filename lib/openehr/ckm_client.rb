@@ -2,6 +2,6 @@ module OpenEHR
   module CKMClient
     require 'openehr/ckm_client/cli'
     require 'openehr/ckm_client/soap_interface'
-    VERSION = '0.3.0'
+    require_relative 'ckm_client/version.rb'
   end
 end
